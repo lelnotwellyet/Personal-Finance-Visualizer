@@ -11,7 +11,7 @@ export async function GET() {
       dbName: conn.connection.name // Changed from conn.db.databaseName
     });
     
-  } catch (error) {
+  } catch  {
     return NextResponse.json(
       { error: 'Connection failed' },
       { status: 500 }

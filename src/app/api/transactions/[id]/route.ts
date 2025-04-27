@@ -23,7 +23,7 @@ export async function PUT(
     }
     
     return NextResponse.json(updatedTransaction);
-  } catch (error) {
+  } catch  {
     return NextResponse.json(
       { error: 'Failed to update transaction' },
       { status: 500 }
@@ -50,7 +50,7 @@ export async function DELETE(
       { message: 'Transaction deleted successfully' },
       { status: 200 }
     );
-  } catch (error) {
+  } catch  {
     return NextResponse.json(
       { error: 'Failed to delete transaction' },
       { status: 500 }

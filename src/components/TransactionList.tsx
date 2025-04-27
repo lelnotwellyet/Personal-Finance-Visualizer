@@ -41,7 +41,7 @@ export default function TransactionList({ refreshKey }: { refreshKey: number }) 
       // Refresh the list
       const newData = transactions.filter(t => t._id !== id);
       setTransactions(newData);
-    } catch (error) {
+    } catch {
       toast.error('Failed to delete transaction. Please try again.');
     }
   };
