@@ -18,11 +18,17 @@ export default function TransactionList({ refreshKey }: { refreshKey: number }) 
     const fetchTransactions = async () => {
       try {
         const response = await fetch('/api/transactions');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
         setTransactions(data);
       } catch (error) {
-        console.error('Error fetching transactions:', error);
+        console.error('Fetch error:', error);
         toast.error('Failed to load transactions');
+        setTransactions([]); // Reset to empty array
       }
     };
 

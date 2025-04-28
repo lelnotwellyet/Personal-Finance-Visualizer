@@ -13,6 +13,12 @@
   - Required field checks
   - Proper date formatting
   - Numeric amount validation
+  [Live Demo (Stage 1)](https://personal-finance-visualizer-git-master-lalmohammad-s-projects.vercel.app/)
+  ## Stage 2: Categories & Dashboard
+- Added transaction categories
+- Implemented category-wise pie chart
+- Built dashboard summary cards
+ 
 
 ## Tech Stack
 

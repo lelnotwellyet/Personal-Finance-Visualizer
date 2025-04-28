@@ -23,6 +23,11 @@ export default function MonthlyExpensesChart({ refreshKey }: { refreshKey: numbe
     const fetchData = async () => {
       try {
         const response = await fetch('/api/transactions');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const transactions: Transaction[] = await response.json();
         
         const monthlyData = transactions.reduce((acc: Record<string, number>, transaction) => {
@@ -39,7 +44,8 @@ export default function MonthlyExpensesChart({ refreshKey }: { refreshKey: numbe
 
         setData(chartData);
       } catch (error) {
-        console.error('Error fetching chart data:', error);
+        console.error('Chart data error:', error);
+        setData([]); // Reset to empty array in case of error
       }
     };
 
