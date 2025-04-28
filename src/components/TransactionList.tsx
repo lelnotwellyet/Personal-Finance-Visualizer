@@ -28,7 +28,7 @@ export default function TransactionList({ refreshKey }: { refreshKey: number }) 
       } catch (error) {
         console.error('Fetch error:', error);
         toast.error('Failed to load transactions');
-        setTransactions([]); // Reset to empty array
+        setTransactions([]); 
       }
     };
 

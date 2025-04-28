@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import TransactionForm from '@/components/TransactionForm'; // Correct default import
+import TransactionForm from '@/components/TransactionForm'; 
 import TransactionList from '@/components/TransactionList';
 import MonthlyExpensesChart from '@/components/MonthlyExpensesChart';
 import DashboardCards from '@/components/DashBoardCards';
@@ -12,7 +12,7 @@ export default function Home() {
   const [refreshKey, setRefreshKey] = useState(0);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  // Fetch transactions with categories
+  
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
@@ -24,13 +24,13 @@ export default function Home() {
         setTransactions(data);
       } catch (error) {
         console.error('Error fetching transactions:', error);
-        setTransactions([]); // Ensure fallback on error
+        setTransactions([]); 
       }
     };
     fetchTransactions();
   }, [refreshKey]);
 
-  // Prepare data for charts
+  
   const categoryData = Object.entries(
     transactions.reduce((acc: Record<string, number>, t) => {
       acc[t.category] = (acc[t.category] || 0) + t.amount;

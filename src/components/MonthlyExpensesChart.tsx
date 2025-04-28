@@ -45,7 +45,7 @@ export default function MonthlyExpensesChart({ refreshKey }: { refreshKey: numbe
         setData(chartData);
       } catch (error) {
         console.error('Chart data error:', error);
-        setData([]); // Reset to empty array in case of error
+        setData([]); 
       }
     };
 
