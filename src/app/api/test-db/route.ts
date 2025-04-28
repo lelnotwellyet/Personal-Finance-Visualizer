@@ -5,10 +5,10 @@ export async function GET() {
   try {
     const conn = await dbConnect();
     
-    // Proper way to access the database name
+    
     return NextResponse.json({
       status: 'Connected',
-      dbName: conn.connection.name // Changed from conn.db.databaseName
+      dbName: conn.connection.name 
     });
     
   } catch  {

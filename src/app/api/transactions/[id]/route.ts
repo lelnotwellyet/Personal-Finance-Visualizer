@@ -4,7 +4,7 @@ import Transaction from '@/models/Transaction';
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } } // Properly destructure params
+  { params }: { params: { id: string } } 
 ) {
   await dbConnect();
   try {
