@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { dbConnect } from '@/lib/db';
 import Transaction from '@/models/Transaction';
 
-// Add POST handler
+
 export async function POST(request: Request) {
   await dbConnect();
   
@@ -10,7 +10,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const validCategories = ["Food", "Rent", "Transport", "Entertainment", "Utilities"];
 
-    // Validation
+    
     if (!validCategories.includes(body.category)) {
       return NextResponse.json({ error: "Invalid category" }, { status: 400 });
     }
@@ -30,7 +30,7 @@ export async function POST(request: Request) {
   }
 }
 
-// Add GET handler
+
 export async function GET() {
   await dbConnect();
   try {
